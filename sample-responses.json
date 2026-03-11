@@ -1,0 +1,102 @@
+{
+  "generate_remittances_for_all_users": {
+    "endpoint": "POST /api/v1/settlement/generate-remittances-for-all-users",
+    "description": "Generates remittances for all users based on eligible unremitted work",
+    "response": {
+      "data": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440000",
+          "user_id": "550e8400-e29b-41d4-a716-446655440001",
+          "remittance_date": "2024-08-01T10:00:00",
+          "amount": "1500.50",
+          "status": "COMPLETED",
+          "created_at": "2024-08-01T10:00:00"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440002",
+          "user_id": "550e8400-e29b-41d4-a716-446655440003",
+          "remittance_date": "2024-08-01T10:00:00",
+          "amount": "2350.75",
+          "status": "COMPLETED",
+          "created_at": "2024-08-01T10:00:00"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "list_all_worklogs_unremitted": {
+    "endpoint": "GET /api/v1/settlement/list-all-worklogs?remittanceStatus=UNREMITTED",
+    "description": "Lists all unremitted worklogs with their calculated amounts",
+    "response": {
+      "data": [
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440000",
+          "user_id": "550e8400-e29b-41d4-a716-446655440001",
+          "task_id": "TASK-001",
+          "remittance_status": "UNREMITTED",
+          "amount": "500.00",
+          "created_at": "2024-07-15T09:30:00"
+        },
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440001",
+          "user_id": "550e8400-e29b-41d4-a716-446655440001",
+          "task_id": "TASK-002",
+          "remittance_status": "UNREMITTED",
+          "amount": "1000.50",
+          "created_at": "2024-07-20T14:45:00"
+        }
+      ],
+      "count": 2
+    }
+  },
+  "list_all_worklogs_remitted": {
+    "endpoint": "GET /api/v1/settlement/list-all-worklogs?remittanceStatus=REMITTED",
+    "description": "Lists all remitted worklogs with their calculated amounts",
+    "response": {
+      "data": [
+        {
+          "id": "770e8400-e29b-41d4-a716-446655440000",
+          "user_id": "550e8400-e29b-41d4-a716-446655440003",
+          "task_id": "TASK-003",
+          "remittance_status": "REMITTED",
+          "amount": "2350.75",
+          "created_at": "2024-06-10T11:20:00"
+        }
+      ],
+      "count": 1
+    }
+  },
+  "list_all_worklogs_no_filter": {
+    "endpoint": "GET /api/v1/settlement/list-all-worklogs",
+    "description": "Lists all worklogs regardless of remittance status",
+    "response": {
+      "data": [
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440000",
+          "user_id": "550e8400-e29b-41d4-a716-446655440001",
+          "task_id": "TASK-001",
+          "remittance_status": "UNREMITTED",
+          "amount": "500.00",
+          "created_at": "2024-07-15T09:30:00"
+        },
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440001",
+          "user_id": "550e8400-e29b-41d4-a716-446655440001",
+          "task_id": "TASK-002",
+          "remittance_status": "UNREMITTED",
+          "amount": "1000.50",
+          "created_at": "2024-07-20T14:45:00"
+        },
+        {
+          "id": "770e8400-e29b-41d4-a716-446655440000",
+          "user_id": "550e8400-e29b-41d4-a716-446655440003",
+          "task_id": "TASK-003",
+          "remittance_status": "REMITTED",
+          "amount": "2350.75",
+          "created_at": "2024-06-10T11:20:00"
+        }
+      ],
+      "count": 3
+    }
+  }
+}
